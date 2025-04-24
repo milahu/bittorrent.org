@@ -230,6 +230,7 @@ Considerations
 ==============
 
 The "xt=urn:btih:" parameter
+----------------------------
 
 A common source of confusion so far was whether a Bittorrent
 Info Hash is a URN refering to BitTorrent metadata or
