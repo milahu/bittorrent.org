@@ -33,7 +33,7 @@ This BEP adds support for alternative sources as specified
 in BEP19 for both data and metadata in the case of magnet
 URIs as specified in BEP9. It updates BEP9 with the magnet
 link parameters "as", "xs" and "ws" and their
-interpretation in the presence of an "xt=\ urn:btih:"
+interpretation in the presence of an "xt=urn:btih:"
 parameter.
 
 Introduction
@@ -42,7 +42,7 @@ Introduction
 A magnet URI as specified in
 <ref>\ `[3] <http://magnet-uri.sourceforge.net/magnet-draft-overview.txt>`__\ </ref>
 and BEP9 only provides the ability to retrieve the "info"
-section of a torrent file via the "xt=\ urn:btih:"
+section of a torrent file via the "xt=urn:btih:"
 parameter, as well as a display name ("dn") and tracker url
 ("tr") parameter. However, the metadata extension
 "url-list" (BEP19) is not part of the "info" section.
@@ -121,7 +121,7 @@ If the retrieved file is not a valid .torrent file then the
 .torrent file MUST be silently discarded.
 
 If the Bittorrent Info Hash provided by the magnet URI
-("xt=\ urn:btih:") does not match the "info" section of the
+("xt=urn:btih:") does not match the "info" section of the
 retrieved .torrent file then the .torrent file MUST be
 silently discarded.
 
@@ -145,7 +145,7 @@ If the retrieved file is not a valid .torrent file then the
 .torrent file MUST be silently discarded.
 
 If the Bittorrent Info Hash provided by the magnet URI
-("xt=\ urn:btih:") does not match the "info" section of the
+("xt=urn:btih:") does not match the "info" section of the
 retrieved .torrent file then the .torrent file MUST be
 silently discarded.
 
@@ -195,7 +195,7 @@ A client SHOULD NOT interpret an "xs" parameter as an "as"
 parameter.
 
 A client MUST NOT assume the applicability of this BEP for
-any "xt" parameter other than "xt=\ urn:btih:". The "ws",
+any "xt" parameter other than "xt=urn:btih:". The "ws",
 "as" and "xs" parameters might have different meanings for
 other URIs provided by an "xt" parameter.
 
@@ -229,7 +229,7 @@ or might not have sufficient bandwidth.
 Considerations
 ==============
 
-The "xt=\ urn:btih:" parameter
+The "xt=urn:btih:" parameter
 
 A common source of confusion so far was whether a Bittorrent
 Info Hash is a URN refering to BitTorrent metadata or
@@ -274,25 +274,25 @@ superfluous and might therefore violate the intention behind
 this requirement.
 
 Therefore this BEP considers a magnet link with an
-"xt=\ urn:btih:" refering to the BitTorrent Info Hash only
+"xt=urn:btih:" refering to the BitTorrent Info Hash only
 and not to the BitTorrent payload data. Even if the
-"xt=\ urn:btih" parameter were supposed to fullfil the
+"xt=urn:btih:" parameter were supposed to fullfil the
 requirement described above in combination with other yet to
 be specified magnet URI parameters in the future.
 
 Therefore future BEPs MUST NOT change the interpretation of
-the "ws", "as" or "xs" parameter if a "xt=\ urn:btih:"
+the "ws", "as" or "xs" parameter if a "xt=urn:btih:"
 parameter is present to avoid compatibility issues. A future
 BEP MAY carefully add additional steps as long as
 compatibility is ensured. A future BEP MAY change the
 interpretation of the "ws", "as" or "xs" parameter if an
-"xt=\ urn:btih:" parameter is absent.
+"xt=urn:btih:" parameter is absent.
 
 This BEP SHOULD be declared deprecated if the
-"xt=\ urn:btih:" became deprecated.
+"xt=urn:btih:" became deprecated.
 
-The "ws" (as well as "xt=\ urn:btih:" or "xt=\ urn:ed2k:"
-or "xt=\ urn:kzhash:" ...) might not be in compliance with
+The "ws" (as well as "xt=urn:btih:" or "xt=urn:ed2k:"
+or "xt=urn:kzhash:" ...) might not be in compliance with
 the magnet URI rational, in that they are not protocol
 agnostic, they are Bittorrent specific - they are "protocol
 centric", not "data centric". Which would make it difficult
