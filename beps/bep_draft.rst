@@ -75,8 +75,8 @@ BitTorrent user.
 <!--
 TODO explain parameter names
 - ws = webseed
-- xs = extra source
-- as = alternative source
+- xs = exact source
+- as = acceptable source
 - cas = content-addressed storage https://en.wikipedia.org/wiki/Content-addressable_storage
 -->
 
