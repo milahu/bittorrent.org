@@ -72,6 +72,14 @@ possible confusion two provided links, i.e. a magnet link
 and a classic .torrent file link, may cause for a new
 BitTorrent user.
 
+<!--
+TODO explain parameter names
+- ws = webseed
+- xs = extra source
+- as = alternative source
+- cas = content-addressed storage https://en.wikipedia.org/wiki/Content-addressable_storage
+-->
+
 Requirements
 ============
 
