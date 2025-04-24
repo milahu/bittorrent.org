@@ -160,6 +160,31 @@ following "/" character, MUST be appended by the string
 ".torrent" and the result SHOULD be interpreted as an "as"
 parameter appended to the magnet URI.
 
+Retrieving metadata and payload data - "cas" parameter
+------------------------------------------------------
+
+The "cas" parameter SHOULD additionally be used in the
+following way:
+
+The URL provided by a "cas" parameter MUST be appended by
+
+1. A "/" character if the "cas" URL does not end with "/"
+2. The Bittorrent Info Hash type:
+   "btih" or "btmh" in lowercase letters ("[a-z]")
+3. A "/" character
+4. The Bittorrent Info Hash:
+   40 or 64 characters in lowercase letters ("[0-9a-f]")
+   except when the parameter name is in uppercase ("CAS")
+   then the Bittorrent Info Hash in uppercase letters ("[0-9A-F]")
+
+The result SHOULD be interpreted as an "ws"
+parameter appended to the magnet URI.
+
+When a magnet URI has multiple hash types,
+then the client SHOULD use all resulting URLs.
+
+<!-- TODO should the client prefer "btmh" over "btih"? -->
+
 Client Implementation Notes
 ===========================
 
