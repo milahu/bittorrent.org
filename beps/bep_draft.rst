@@ -169,21 +169,22 @@ following way:
 The URL provided by a "cas" parameter MUST be appended by
 
 1. A "/" character if the "cas" URL does not end with "/"
-2. The Bittorrent Info Hash type:
-   "btih" or "btmh" in lowercase letters ("[a-z]")
+2. The URN hash type from the "xt=urn:" parameter in lowercase letters ("[0-9a-z]"):
+   btih, btmh, ed2k, kzhash, tree:tiger, sha1, md5, bitprint, aich, ...
 3. A "/" character
-4. The Bittorrent Info Hash:
-   40 or 64 characters in lowercase letters ("[0-9a-f]")
-   except when the parameter name is in uppercase ("CAS")
-   then the Bittorrent Info Hash in uppercase letters ("[0-9A-F]")
+4. The URN hash value from the "xt=urn:" parameter in lowercase letters ("[0-9a-z]")
+   except when the "cas" parameter name is in uppercase ("CAS")
+   then the URN hash value in uppercase letters ("[0-9A-Z]")
 
 The result SHOULD be interpreted as an "ws"
 parameter appended to the magnet URI.
 
-When a magnet URI has multiple hash types,
+When a magnet URI has multiple "xt=urn:" parameters,
 then the client SHOULD use all resulting URLs.
 
 <!-- TODO should the client prefer "btmh" over "btih"? -->
+
+<!-- see also https://en.wikipedia.org/wiki/Magnet_URI_scheme#Exact_Topic_(xt) -->
 
 Client Implementation Notes
 ===========================
