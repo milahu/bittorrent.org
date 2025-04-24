@@ -80,6 +80,12 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
 and "OPTIONAL" in this document are to be interpreted as
 described in BCP 14, RFC 2119 [KEYWORDS].
 
+<!--
+TODO reorder the parameter chapters?
+first metadata, then payload data.
+first "ws", then others.
+-->
+
 Retrieving payload data - "ws" parameter
 ----------------------------------------
 
