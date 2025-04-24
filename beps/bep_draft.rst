@@ -166,6 +166,14 @@ more "url-list" keys are available.
 A client SHOULD NOT discard any "url-list" key if one or
 more "ws=" parameters are available.
 
+Merge Additional Webseed URLs
+-----------------------------
+
+When the user adds a magnet link to a client
+and when the client has already loaded this torrent
+then the client should merge additional webseed URLs
+just like it would merge additional tracker URLs.
+
 Magnet URI Provider Notes
 =========================
 
