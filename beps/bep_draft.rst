@@ -10,11 +10,11 @@
 
 --- Work in Progress - Work in Progress - Work in Progress ---
 
-This is an attempt to formalize the "ws=" parameter for one
+This is an attempt to formalize the "ws" parameter for one
 thing. For another, it extents the current, common usage
 with the possibility to fetch metadata via a webseed and
-therefore adds additional interpretations of the "ws=",
-"as=" and "xs=" parameters.
+therefore adds additional interpretations of the "ws",
+"as" and "xs" parameters.
 
 The only "documentation" so far seems to be:
 `[1] <https://trac.transmissionbt.com/ticket/2631#comment:2>`__,
@@ -32,7 +32,7 @@ Abstract
 This BEP adds support for alternative sources as specified
 in BEP19 for both data and metadata in the case of magnet
 URIs as specified in BEP9. It updates BEP9 with the magnet
-link parameters "as=", "xs=" and "ws=" and their
+link parameters "as", "xs" and "ws" and their
 interpretation in the presence of an "xt=\ urn:btih:"
 parameter.
 
@@ -43,8 +43,8 @@ A magnet URI as specified in
 <ref>\ `[3] <http://magnet-uri.sourceforge.net/magnet-draft-overview.txt>`__\ </ref>
 and BEP9 only provides the ability to retrieve the "info"
 section of a torrent file via the "xt=\ urn:btih:"
-parameter, as well as a display name ("dn=") and tracker url
-("tr=") parameter. However, the metadata extension
+parameter, as well as a display name ("dn") and tracker url
+("tr") parameter. However, the metadata extension
 "url-list" (BEP19) is not part of the "info" section.
 Therefore, to be able to use BEP19 in the context of magnet
 links the Bittorrent protocol and its interpretation of
@@ -80,27 +80,27 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL",
 and "OPTIONAL" in this document are to be interpreted as
 described in BCP 14, RFC 2119 [KEYWORDS].
 
-Retrieving payload data - "ws=" parameter
------------------------------------------
+Retrieving payload data - "ws" parameter
+----------------------------------------
 
 As long as no metadata is available, no further steps for
 retrieving payload data MUST be taken. Otherwise if the
-"ws=" parameter is available then it SHOULD be interpreted
+"ws" parameter is available then it SHOULD be interpreted
 and used in the following way:
 
-If the client supports BEP19 then it SHOULD append the "ws="
+If the client supports BEP19 then it SHOULD append the "ws"
 parameter as a "url-list" key in the main area of the
 metadata and perform BEP19 accordingly.
 
-Retrieving metadata - "xs=" parameter
--------------------------------------
+Retrieving metadata - "xs" parameter
+------------------------------------
 
-If the "xs=" parameter is present then a client SHOULD try
+If the "xs" parameter is present then a client SHOULD try
 to retrieve a .torrent file via the URL provided by the
-"xs=" parameter.
+"xs" parameter.
 
 If a client does not understand the protocol in this URL
-then it MUST silently ignore this specific "xs=" parameter
+then it MUST silently ignore this specific "xs" parameter
 with this URL.
 
 If the retrieved file is not a valid .torrent file then the
@@ -114,17 +114,17 @@ silently discarded.
 If a client is capable of BEP9 then it SHOULD use both
 mechanisms in parallel.
 
-Retrieving metadata - "as=" parameter
--------------------------------------
+Retrieving metadata - "as" parameter
+------------------------------------
 
 If no metadata could be retrieved with the mechanism
-specified in BEP9 or with any provided "xs=" parameter and
-if an "as=" parameter is present then a client SHOULD try to
-retrieve a .torrent file via the URL provided by the "as="
+specified in BEP9 or with any provided "xs" parameter and
+if an "as" parameter is present then a client SHOULD try to
+retrieve a .torrent file via the URL provided by the "as"
 parameter.
 
 If a client does not understand the protocol in this URL
-then it MUST silently ignore this specific "as=" parameter
+then it MUST silently ignore this specific "as" parameter
 with this URL.
 
 If the retrieved file is not a valid .torrent file then the
@@ -135,36 +135,36 @@ If the Bittorrent Info Hash provided by the magnet URI
 retrieved .torrent file then the .torrent file MUST be
 silently discarded.
 
-Retrieving metadata - "ws=" parameter
--------------------------------------
+Retrieving metadata - "ws" parameter
+------------------------------------
 
-The "ws=" parameter SHOULD additionally be used in the
+The "ws" parameter SHOULD additionally be used in the
 following way:
 
-The URL provided by a "ws=" parameter, excluding a possible,
+The URL provided by a "ws" parameter, excluding a possible,
 following "/" character, MUST be appended by the string
-".torrent" and the result SHOULD be interpreted as an "as="
+".torrent" and the result SHOULD be interpreted as an "as"
 parameter appended to the magnet URI.
 
 Client Implementation Notes
 ===========================
 
-A client MUST NOT interpret an "as=" parameter as an "xs="
+A client MUST NOT interpret an "as" parameter as an "xs"
 parameter.
 
-A client SHOULD NOT interpret an "xs=" parameter as an "as="
+A client SHOULD NOT interpret an "xs" parameter as an "as"
 parameter.
 
 A client MUST NOT assume the applicability of this BEP for
-any "xt=" parameter other than "xt=\ urn:btih:". The "ws=",
-"as=" and "xs=" parameters might have different meanings for
-other URIs provided by an "xt=" parameter.
+any "xt" parameter other than "xt=\ urn:btih:". The "ws",
+"as" and "xs" parameters might have different meanings for
+other URIs provided by an "xt" parameter.
 
-A client SHOULD NOT discard any "ws=" parameter if one or
+A client SHOULD NOT discard any "ws" parameter if one or
 more "url-list" keys are available.
 
 A client SHOULD NOT discard any "url-list" key if one or
-more "ws=" parameters are available.
+more "ws" parameters are available.
 
 Merge Additional Webseed URLs
 -----------------------------
@@ -177,13 +177,13 @@ just like it would merge additional tracker URLs.
 Magnet URI Provider Notes
 =========================
 
-The provider of a magnet link MAY add an "xs=" parameter to
+The provider of a magnet link MAY add an "xs" parameter to
 decrease the latency for retrieving metadata if BEP9 or the
-"as="/"ws=" parameters are expected to have a negative
+"as"/"ws" parameters are expected to have a negative
 impact on usability (e.g. if there are only a few or no
 Bittorrent peers).
 
-The provider of a magnet link SHOULD NOT add an "xs="
+The provider of a magnet link SHOULD NOT add an "xs"
 parameter if the source is expected to have a "high" latency
 or might not have sufficient bandwidth.
 
@@ -242,17 +242,17 @@ requirement described above in combination with other yet to
 be specified magnet URI parameters in the future.
 
 Therefore future BEPs MUST NOT change the interpretation of
-the "ws=", "as=" or "xs=" parameter if a "xt=\ urn:btih:"
+the "ws", "as" or "xs" parameter if a "xt=\ urn:btih:"
 parameter is present to avoid compatibility issues. A future
 BEP MAY carefully add additional steps as long as
 compatibility is ensured. A future BEP MAY change the
-interpretation of the "ws=", "as=" or "xs=" parameter if an
+interpretation of the "ws", "as" or "xs" parameter if an
 "xt=\ urn:btih:" parameter is absent.
 
 This BEP SHOULD be declared deprecated if the
 "xt=\ urn:btih:" became deprecated.
 
-The "ws=" (as well as "xt=\ urn:btih:" or "xt=\ urn:ed2k:"
+The "ws" (as well as "xt=\ urn:btih:" or "xt=\ urn:ed2k:"
 or "xt=\ urn:kzhash:" ...) might not be in compliance with
 the magnet URI rational, in that they are not protocol
 agnostic, they are Bittorrent specific - they are "protocol
@@ -275,8 +275,8 @@ integrity, authenticity or confidentiality. It is therefore
 RECOMMENDED to use a channel which fullfils the security
 requirements of the provider and recipient of a magnet URI.
 
-A user MAY add unauthenticated, additional "ws=", "as=" and
-"xs=" parameters as the BitTorrent Info Hash of the magnet
+A user MAY add unauthenticated, additional "ws", "as" and
+"xs" parameters as the BitTorrent Info Hash of the magnet
 links still ensures the integrity and validity of data
 received from untrusted sources. However a BitTorrent Info
 Hash is not able to ensure confidentiality of the
