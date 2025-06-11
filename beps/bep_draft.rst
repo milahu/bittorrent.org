@@ -174,8 +174,6 @@ The URL provided by a "cas" parameter MUST be appended by
 3. A "/" character
 4. The Bittorrent Info Hash:
    40 or 64 characters in lowercase letters ("[0-9a-f]")
-   except when the parameter name is in uppercase ("CAS")
-   then the Bittorrent Info Hash in uppercase letters ("[0-9A-F]")
 
 The result SHOULD be interpreted as an "ws"
 parameter appended to the magnet URI.
