@@ -32,7 +32,7 @@ Abstract
 This BEP adds support for alternative sources as specified
 in BEP19 for both data and metadata in the case of magnet
 URIs as specified in BEP9. It updates BEP9 with the magnet
-link parameters "as", "xs" and "ws" and their
+link parameters "as", "xs", "ws" and "cas" and their
 interpretation in the presence of an "xt=urn:btih:"
 parameter.
 
@@ -71,6 +71,9 @@ slow due to e.g. a low amount of peers). This removes the
 possible confusion two provided links, i.e. a magnet link
 and a classic .torrent file link, may cause for a new
 BitTorrent user.
+
+The "cas" parameter makes it possible to merge "ws" and "xs"
+parameters, to produce shorter magnet URIs.
 
 <!--
 TODO explain parameter names
