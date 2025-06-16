@@ -197,7 +197,7 @@ parameter.
 
 A client MUST NOT assume the applicability of this BEP for
 any "xt" parameter other than "xt=urn:btih:". The "ws",
-"as" and "xs" parameters might have different meanings for
+"as", "xs" and "cas" parameters might have different meanings for
 other URIs provided by an "xt" parameter.
 
 A client SHOULD NOT discard any "ws" parameter if one or
@@ -283,11 +283,11 @@ requirement described above in combination with other yet to
 be specified magnet URI parameters in the future.
 
 Therefore future BEPs MUST NOT change the interpretation of
-the "ws", "as" or "xs" parameter if a "xt=urn:btih:"
+the "ws", "as", "xs" or "cas" parameter if a "xt=urn:btih:"
 parameter is present to avoid compatibility issues. A future
 BEP MAY carefully add additional steps as long as
 compatibility is ensured. A future BEP MAY change the
-interpretation of the "ws", "as" or "xs" parameter if an
+interpretation of the "ws", "as", "xs" or "cas" parameter if an
 "xt=urn:btih:" parameter is absent.
 
 This BEP SHOULD be declared deprecated if the
