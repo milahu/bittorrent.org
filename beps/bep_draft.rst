@@ -43,7 +43,7 @@ A magnet URI as specified in
 <ref>\ `[3] <http://magnet-uri.sourceforge.net/magnet-draft-overview.txt>`__\ </ref>
 and BEP9 only provides the ability to retrieve the "info"
 section of a torrent file via the "xt=urn:btih:"
-parameter, as well as a display name ("dn") and tracker url
+parameter, as well as a <!-- display name ("dn") and --> tracker url
 ("tr") parameter. However, the metadata extension
 "url-list" (BEP19) is not part of the "info" section.
 Therefore, to be able to use BEP19 in the context of magnet
