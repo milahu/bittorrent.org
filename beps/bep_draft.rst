@@ -53,7 +53,7 @@ webseeds again.
 
 Webseeds are especially useful if the availability of
 Bittorrent seeds is limited but alternative sources exist.
-However in the case of magnet URIs if not only no Bittorrent
+However, in the case of magnet URIs if not only no Bittorrent
 seed but also no Bittorrent peer in general exists, BEP19 is
 not applicable although the data itself is available. A
 Bittorrent client is not able to verify the retrieved data
@@ -61,14 +61,14 @@ due to the "info" part not being available. Therefore this
 BEP further updates BEP9 and BEP19 to allow fetching
 metadata from webseeds.
 
-Furthermore the purpose of this BEP is to increase the
+Furthermore, the purpose of this BEP is to increase the
 usability of magnet URIs: It allows the provider of magnet
-URIs to embedd a .torrent file web source within a magnet
+URIs to embed a .torrent file web source within a magnet
 URI which allows the provider to only have to present a
 single link to any users in all circumstances (even if a
 client does not support BEP9 or if BEP9 is expected to be
 slow due to e.g. a low amount of peers). This removes the
-possible confusion two provided links, i.e. a magnet link
+possible confusion from two provided links, i.e. a magnet link
 and a classic .torrent file link, may cause for a new
 BitTorrent user.
 
