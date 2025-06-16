@@ -135,7 +135,7 @@ Retrieving metadata - "as" parameter
 ------------------------------------
 
 If no metadata could be retrieved with the mechanism
-specified in BEP9 or with any provided "xs" parameter and
+specified in BEP9 <!-- TODO timeout? --> or with any provided "xs" parameter and
 if an "as" parameter is present then a client SHOULD try to
 retrieve a .torrent file via the URL provided by the "as"
 parameter.
