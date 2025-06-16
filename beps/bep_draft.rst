@@ -294,8 +294,8 @@ This BEP SHOULD be declared deprecated if the
 "xt=urn:btih:" became deprecated.
 
 The "ws" (as well as "xt=urn:btih:" or "xt=urn:ed2k:"
-or "xt=urn:kzhash:" ...) might not be in compliance with
-the magnet URI rational, in that they are not protocol
+or "xt=urn:kzhash:" ...) might not be compliant with
+the magnet URI rationale, in that they are not protocol
 agnostic, they are Bittorrent specific - they are "protocol
 centric", not "data centric". Which would make it difficult
 to ensure the universal applicability of a magnet URI (i.e.
